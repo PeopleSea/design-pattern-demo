@@ -4,9 +4,11 @@ package prototype;
  * @author by Eric
  * @since 2020/9/9 下午 03:45
  */
-public abstract class AbstractShape implements Cloneable{
+public abstract class Car implements Cloneable{
     private String id;
     protected String type;
+
+    abstract void brand();
 
     public String getId() {
         return id;
