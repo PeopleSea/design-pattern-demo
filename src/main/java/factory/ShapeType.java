@@ -8,7 +8,10 @@ public enum ShapeType {
     CIRCLE(0,"CIRCLE"),
 
     SQUARE(1,"SQUARE"),
-    RECTANGLE(2,"RECTANGLE");
+    RECTANGLE(2,"RECTANGLE"),
+    ROUNDED_RECTANGLE(3,"ROUNDEDRECTANGLE"),
+    ROUNDED_SQUARE(4,"ROUNDEDSQUARE")
+    ;
 
     private Integer value;
     private String type;
