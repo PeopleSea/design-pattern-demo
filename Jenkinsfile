@@ -7,13 +7,9 @@ pipeline {
       }
     }
 
-    stage('check docker install and build env') {
+    stage('build') {
       steps {
-        sh '''docker -v
-docker-compose -v
-docker ps
-make start-docker-registry
-make build-docker-env'''
+        sh 'mvn clean package'
       }
     }
 
