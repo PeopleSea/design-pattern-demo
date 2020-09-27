@@ -1,15 +1,19 @@
 pipeline {
-  agent {
-    docker {
-      image 'node:6-alpine'
-      args '-p 3000:3000'
+  agent any
+  stages {
+    stage('checkout') {
+      steps {
+        sh 'git pull https://github.com/PeopleSea/design-pattern-demo.git'
+      }
     }
 
-  }
-  stages {
-    stage('build') {
+    stage('check docker install and build env') {
       steps {
-        sh 'npm install'
+        sh '''sh "docker -v"
+sh "docker-compose -v"
+sh "docker ps"
+sh "make start-docker-registry"
+sh "make build-docker-env"'''
       }
     }
 
