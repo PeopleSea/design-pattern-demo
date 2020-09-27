@@ -9,11 +9,11 @@ pipeline {
 
     stage('check docker install and build env') {
       steps {
-        sh '''sh "docker -v"
-sh "docker-compose -v"
-sh "docker ps"
-sh "make start-docker-registry"
-sh "make build-docker-env"'''
+        sh '''docker -v
+docker-compose -v
+docker ps
+make start-docker-registry
+make build-docker-env'''
       }
     }
 
